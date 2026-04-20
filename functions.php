@@ -29,6 +29,10 @@ add_action('wp_enqueue_scripts', function () {
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles');
 
+// wpautop inserta <p> fantasma entre elementos de grid/flex — desactivar
+remove_filter('the_content', 'wpautop');
+remove_filter('the_excerpt', 'wpautop');
+
 // Sin barra de admin en el front
 add_filter('show_admin_bar', '__return_false');
 
