@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  PLANTILLA BLOG POST — rubencervera.es
+  ============================================================
+  Diseñada para ser generada por un workflow n8n + IA.
+  Los placeholders {{VARIABLE}} deben ser reemplazados por el
+  workflow antes de publicar en WordPress.
+
+  PLACEHOLDERS OBLIGATORIOS:
+  {{POST_TITLE}}          → Título del artículo (H1)
+  {{POST_SLUG}}           → URL slug (ej: "como-montar-vps-hetzner")
+  {{META_DESCRIPTION}}    → Meta description (140-160 chars)
+  {{META_KEYWORDS}}       → Keywords separadas por comas
+  {{POST_CATEGORY}}       → "Soporte" | "Web" | "Automatización + IA" | "Domótica"
+  {{POST_CATEGORY_SLUG}}  → "soporte-tecnico" | "desarrollo-web" | "automatizacion-ia" | "domotica"
+  {{PUBLISH_DATE_ISO}}    → 2026-04-18
+  {{PUBLISH_DATE_HUMAN}}  → 18 abr 2026
+  {{READING_TIME}}        → "6 min"
+  {{LEDE}}                → Párrafo de introducción (entradilla)
+  {{CONTENT_HTML}}        → HTML del cuerpo (h2, h3, p, ul, code...)
+  {{FEATURED_IMAGE_URL}}  → URL de imagen destacada (og:image)
+  {{RELATED_SERVICE_URL}} → /soporte/ | /desarrollo-web/ | /infraestructura-ia/
+  {{RELATED_SERVICE_NAME}}→ Nombre del servicio relacionado para CTA
+  {{FAQ_JSON_LD}}         → Array JSON-LD de preguntas (opcional, vacío si no aplica)
+  {{RELATED_POSTS_HTML}}  → 3 tarjetas de posts relacionados
+  ============================================================
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{{POST_TITLE}} | Rubén Cervera</title>
+  <meta name="description" content="{{META_DESCRIPTION}}">
+  <meta name="keywords" content="{{META_KEYWORDS}}">
+  <meta name="author" content="Rubén Cervera">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://rubencervera.es/blog/{{POST_SLUG}}/">
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rubencervera.es/blog/{{POST_SLUG}}/">
+  <meta property="og:title" content="{{POST_TITLE}}">
+  <meta property="og:description" content="{{META_DESCRIPTION}}">
+  <meta property="og:image" content="{{FEATURED_IMAGE_URL}}">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Rubén Cervera">
+  <meta property="article:published_time" content="{{PUBLISH_DATE_ISO}}">
+  <meta property="article:author" content="Rubén Cervera">
+  <meta property="article:section" content="{{POST_CATEGORY}}">
+
+  <!-- TWITTER CARD -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{POST_TITLE}}">
+  <meta name="twitter:description" content="{{META_DESCRIPTION}}">
+  <meta name="twitter:image" content="{{FEATURED_IMAGE_URL}}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700;800&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- JSON-LD: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://rubencervera.es/blog/{{POST_SLUG}}/"},
+    "headline": "{{POST_TITLE}}",
+    "description": "{{META_DESCRIPTION}}",
+    "image": "{{FEATURED_IMAGE_URL}}",
+    "datePublished": "{{PUBLISH_DATE_ISO}}",
+    "dateModified": "{{PUBLISH_DATE_ISO}}",
+    "author": {"@type": "Person", "name": "Rubén Cervera", "url": "https://rubencervera.es/"},
+    "publisher": {
+      "@type": "Organization",
+      "name": "Rubén Cervera",
+      "logo": {"@type": "ImageObject", "url": "https://rubencervera.es/logo.svg"}
+    },
+    "articleSection": "{{POST_CATEGORY}}",
+    "inLanguage": "es-ES"
+  }
+  </script>
+
+  <!-- JSON-LD: Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://rubencervera.es/"},
+      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://rubencervera.es/blog/"},
+      {"@type": "ListItem", "position": 3, "name": "{{POST_CATEGORY}}", "item": "https://rubencervera.es/blog/categoria/{{POST_CATEGORY_SLUG}}/"},
+      {"@type": "ListItem", "position": 4, "name": "{{POST_TITLE}}", "item": "https://rubencervera.es/blog/{{POST_SLUG}}/"}
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage (opcional, generado si el post incluye FAQ) -->
+  {{FAQ_JSON_LD}}
+</head>
+<body>
+
+  <nav class="site-nav" aria-label="Navegación principal">
+    <div class="nav-inner">
+      <a href="/" class="logo"><span class="logo-dot"></span>rubencervera.es</a>
+      <ul class="nav-links">
+        <li><a href="/soporte/">// soporte</a></li>
+        <li><a href="/desarrollo-web/">// web</a></li>
+        <li><a href="/infraestructura-ia/">// infraestructura</a></li>
+        <li><a href="/blog/" aria-current="page">// blog</a></li>
+        <li><a href="/contacto/">// contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <nav class="breadcrumbs" aria-label="Migas de pan">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/blog/categoria/{{POST_CATEGORY_SLUG}}/">{{POST_CATEGORY}}</a></li>
+        <li aria-current="page">{{POST_TITLE}}</li>
+      </ol>
+    </nav>
+
+    <article class="post-article">
+
+      <header class="post-header">
+        <div class="post-meta">
+          <span class="blog-category">{{POST_CATEGORY}}</span>
+          <time datetime="{{PUBLISH_DATE_ISO}}">{{PUBLISH_DATE_HUMAN}}</time>
+          <span>· {{READING_TIME}}</span>
+        </div>
+        <h1 class="post-title">{{POST_TITLE}}</h1>
+        <p class="post-lede">{{LEDE}}</p>
+      </header>
+
+      <div class="post-content">
+        {{CONTENT_HTML}}
+      </div>
+
+      <!-- CTA al servicio relacionado -->
+      <div class="post-cta">
+        <div class="post-cta-label">// SERVICIO RELACIONADO</div>
+        <h2 class="post-cta-title">¿Prefieres que lo haga yo?</h2>
+        <p class="post-cta-desc">Si después de leer el artículo prefieres delegar, puedo montártelo con precio cerrado y entrega en plazo.</p>
+        <a href="{{RELATED_SERVICE_URL}}" class="btn btn-primary">Ver {{RELATED_SERVICE_NAME}} <span class="arrow">→</span></a>
+      </div>
+
+    </article>
+
+    <!-- RELATED POSTS -->
+    <section class="section-sm">
+      <div class="section-label">SIGUE LEYENDO</div>
+      <h2 class="section-title">Artículos relacionados.</h2>
+      <div class="blog-grid">
+        {{RELATED_POSTS_HTML}}
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand">rubencervera.es</div>
+          <div class="footer-brand-desc">Soluciones técnicas, desarrollo web y automatización con IA. Maresme, Barcelona y remoto.</div>
+        </div>
+        <div class="footer-col">
+          <h4>SERVICIOS</h4>
+          <ul>
+            <li><a href="/soporte/">Soporte y reparación</a></li>
+            <li><a href="/desarrollo-web/">Desarrollo web</a></li>
+            <li><a href="/infraestructura-ia/">Infraestructura + IA</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>SITIO</h4>
+          <ul>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/contacto/">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>CONTACTO</h4>
+          <ul>
+            <li><a href="mailto:info@rubencervera.es">info@rubencervera.es</a></li>
+            <li>Arenys de Mar</li>
+            <li>Barcelona</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Rubén Cervera</div>
+        <div>// powered by rubén cervera</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

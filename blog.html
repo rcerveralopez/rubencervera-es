@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Blog técnico · Soporte, desarrollo web y automatización IA | Rubén Cervera</title>
+  <meta name="description" content="Artículos técnicos sobre soporte informático, desarrollo web WordPress, automatización con n8n, HomeAssistant e IA aplicada. Actualizado cada semana.">
+  <meta name="keywords" content="blog automatización, tutorial n8n, guías WordPress, HomeAssistant tutoriales, IA aplicada pymes">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://rubencervera.es/blog/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rubencervera.es/blog/">
+  <meta property="og:title" content="Blog técnico · Rubén Cervera">
+  <meta property="og:description" content="Guías y tutoriales sobre soporte, web, automatización e IA.">
+  <meta property="og:locale" content="es_ES">
+
+  <!-- RSS / Atom feeds -->
+  <link rel="alternate" type="application/rss+xml" title="Rubén Cervera Blog RSS" href="https://rubencervera.es/feed/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700;800&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": "https://rubencervera.es/blog/",
+    "name": "Blog técnico · Rubén Cervera",
+    "description": "Guías y tutoriales sobre soporte, desarrollo web, automatización e IA aplicada.",
+    "url": "https://rubencervera.es/blog/",
+    "publisher": {"@type": "ProfessionalService", "name": "Rubén Cervera", "url": "https://rubencervera.es/"},
+    "inLanguage": "es-ES"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://rubencervera.es/"},
+      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://rubencervera.es/blog/"}
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="site-nav" aria-label="Navegación principal">
+    <div class="nav-inner">
+      <a href="/" class="logo"><span class="logo-dot"></span>rubencervera.es</a>
+      <ul class="nav-links">
+        <li><a href="/soporte/">// soporte</a></li>
+        <li><a href="/desarrollo-web/">// web</a></li>
+        <li><a href="/infraestructura-ia/">// infraestructura</a></li>
+        <li><a href="/blog/" aria-current="page">// blog</a></li>
+        <li><a href="/contacto/">// contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <nav class="breadcrumbs" aria-label="Migas de pan">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li aria-current="page">Blog</li>
+      </ol>
+    </nav>
+
+    <section class="hero hero-sm">
+      <div class="hero-meta fade-in">
+        <span class="status-pill">BLOG · ACTUALIZADO CADA SEMANA</span>
+      </div>
+      <h1 class="fade-in d1">
+        Notas técnicas<br>
+        <span class="slash">//</span> <span class="accent">bitácora</span>
+      </h1>
+      <p class="hero-sub fade-in d2">
+        Guías, tutoriales y apuntes sobre soporte informático, WordPress, n8n, HomeAssistant e IA aplicada. Publicación semanal.
+      </p>
+    </section>
+
+    <section class="section-sm">
+      <div class="section-label">CATEGORÍAS</div>
+      <h2 class="section-title">Temas que trato.</h2>
+
+      <!--
+        NOTA WORDPRESS: las categorías de abajo deben mapear 1:1
+        a Categorías de WordPress con los mismos slugs:
+        - soporte-tecnico
+        - desarrollo-web
+        - automatizacion-ia
+        - domotica
+      -->
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px;">
+        <a href="/blog/categoria/soporte-tecnico/" style="padding:8px 14px;border:1px solid var(--border-bright);font-family:var(--mono);font-size:12px;text-decoration:none;color:var(--text);background:var(--surface);">01 · SOPORTE</a>
+        <a href="/blog/categoria/desarrollo-web/" style="padding:8px 14px;border:1px solid var(--border-bright);font-family:var(--mono);font-size:12px;text-decoration:none;color:var(--text);background:var(--surface);">02 · WEB</a>
+        <a href="/blog/categoria/automatizacion-ia/" style="padding:8px 14px;border:1px solid var(--border-bright);font-family:var(--mono);font-size:12px;text-decoration:none;color:var(--text);background:var(--surface);">03 · AUTOMATIZACIÓN + IA</a>
+        <a href="/blog/categoria/domotica/" style="padding:8px 14px;border:1px solid var(--border-bright);font-family:var(--mono);font-size:12px;text-decoration:none;color:var(--text);background:var(--surface);">04 · DOMÓTICA</a>
+      </div>
+    </section>
+
+    <section class="section-sm">
+      <div class="section-label">ÚLTIMOS ARTÍCULOS</div>
+      <h2 class="section-title">Publicaciones recientes.</h2>
+
+      <!--
+        NOTA WORDPRESS: este loop se reemplaza por WP_Query.
+        Este HTML es la estructura base de cada .blog-card para que
+        el workflow automatizado y el tema de WordPress respeten el markup.
+      -->
+      <div class="blog-grid">
+
+        <article>
+          <a href="/blog/ejemplo-post/" class="blog-card">
+            <div class="blog-meta">
+              <span class="blog-category">AUTOMATIZACIÓN + IA</span>
+              <time datetime="2026-04-18">18 abr 2026</time>
+              <span>· 6 min</span>
+            </div>
+            <h3 class="blog-title">Cómo montar un agente de IA con n8n para responder leads automáticamente</h3>
+            <p class="blog-excerpt">Guía paso a paso para construir un workflow que recibe formularios de contacto, los clasifica con un LLM y responde con un email personalizado — todo en n8n y sin código.</p>
+            <div class="blog-readmore">Leer artículo →</div>
+          </a>
+        </article>
+
+        <article>
+          <a href="/blog/ejemplo-post-2/" class="blog-card">
+            <div class="blog-meta">
+              <span class="blog-category">WEB</span>
+              <time datetime="2026-04-11">11 abr 2026</time>
+              <span>· 8 min</span>
+            </div>
+            <h3 class="blog-title">Optimización de Core Web Vitals en WordPress sin plugins de caché</h3>
+            <p class="blog-excerpt">Los plugins de caché ayudan, pero la verdadera optimización está en el tema y en la configuración del servidor. Te enseño cómo bajar LCP a menos de 1.5s.</p>
+            <div class="blog-readmore">Leer artículo →</div>
+          </a>
+        </article>
+
+        <article>
+          <a href="/blog/ejemplo-post-3/" class="blog-card">
+            <div class="blog-meta">
+              <span class="blog-category">DOMÓTICA</span>
+              <time datetime="2026-04-04">04 abr 2026</time>
+              <span>· 5 min</span>
+            </div>
+            <h3 class="blog-title">HomeAssistant + Zigbee2MQTT: por qué es mejor que la integración ZHA</h3>
+            <p class="blog-excerpt">Comparativa real tras 2 años usando ambas. Ventajas, desventajas y cuándo elegir cada una según tu setup de dispositivos.</p>
+            <div class="blog-readmore">Leer artículo →</div>
+          </a>
+        </article>
+
+        <article>
+          <a href="/blog/ejemplo-post-4/" class="blog-card">
+            <div class="blog-meta">
+              <span class="blog-category">SOPORTE</span>
+              <time datetime="2026-03-28">28 mar 2026</time>
+              <span>· 4 min</span>
+            </div>
+            <h3 class="blog-title">Linux Mint vs Windows para rescatar ordenadores viejos en 2026</h3>
+            <p class="blog-excerpt">Si tu portátil de 2015 va a pedazos con Windows, aquí tienes la decisión tomada: por qué Linux Mint es la respuesta y cómo hacer la migración en 1 hora.</p>
+            <div class="blog-readmore">Leer artículo →</div>
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section-sm">
+      <h2 class="section-title">¿Te gusta lo que lees?</h2>
+      <p class="section-sub">Suscríbete al RSS o vuelve cada semana — hay artículo nuevo todos los viernes.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;">
+        <a href="/feed/" class="btn">Suscribir al RSS</a>
+        <a href="/contacto/" class="btn btn-primary">Solicitar presupuesto <span class="arrow">→</span></a>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand">rubencervera.es</div>
+          <div class="footer-brand-desc">Soluciones técnicas, desarrollo web y automatización con IA. Maresme, Barcelona y remoto.</div>
+        </div>
+        <div class="footer-col">
+          <h4>SERVICIOS</h4>
+          <ul>
+            <li><a href="/soporte/">Soporte y reparación</a></li>
+            <li><a href="/desarrollo-web/">Desarrollo web</a></li>
+            <li><a href="/infraestructura-ia/">Infraestructura + IA</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>SITIO</h4>
+          <ul>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/contacto/">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>CONTACTO</h4>
+          <ul>
+            <li><a href="mailto:info@rubencervera.es">info@rubencervera.es</a></li>
+            <li>Arenys de Mar</li>
+            <li>Barcelona</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Rubén Cervera</div>
+        <div>// powered by rubén cervera</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

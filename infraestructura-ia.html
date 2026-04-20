@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Infraestructura self-hosted, automatización n8n e IA aplicada | Rubén Cervera</title>
+  <meta name="description" content="Montaje de VPS con Docker, automatizaciones n8n, HomeAssistant y consultoría de IA aplicada para pymes y proyectos técnicos. Servicios con precio cerrado.">
+  <meta name="keywords" content="automatización n8n, self-hosting Docker, HomeAssistant Maresme, consultoría IA aplicada, VPS gestionado, Proxmox, domótica Zigbee">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://rubencervera.es/infraestructura-ia/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rubencervera.es/infraestructura-ia/">
+  <meta property="og:title" content="Infraestructura, n8n e IA aplicada · Rubén Cervera">
+  <meta property="og:description" content="VPS, self-hosting, automatización n8n, HomeAssistant y consultoría IA con precio cerrado.">
+  <meta property="og:locale" content="es_ES">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700;800&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://rubencervera.es/"},
+      {"@type": "ListItem", "position": 2, "name": "Infraestructura + IA", "item": "https://rubencervera.es/infraestructura-ia/"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Infraestructura self-hosted, automatización n8n e IA aplicada",
+    "provider": {"@type": "ProfessionalService", "name": "Rubén Cervera", "url": "https://rubencervera.es/"},
+    "serviceType": "Infraestructura y automatización",
+    "areaServed": [{"@type": "Place", "name": "España"}, {"@type": "Place", "name": "Remoto"}],
+    "description": "Montaje de VPS con Docker, stacks self-hosted, automatizaciones con n8n, instalación de HomeAssistant con Zigbee y consultoría de IA aplicada.",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "itemListElement": [
+        {"@type": "Offer", "name": "Montaje VPS", "price": "250", "priceCurrency": "EUR"},
+        {"@type": "Offer", "name": "Stack self-hosted", "price": "450", "priceCurrency": "EUR"},
+        {"@type": "Offer", "name": "Pack n8n 3 automatizaciones", "price": "350", "priceCurrency": "EUR"},
+        {"@type": "Offer", "name": "Pack n8n 7 automatizaciones", "price": "750", "priceCurrency": "EUR"},
+        {"@type": "Offer", "name": "HomeAssistant base", "price": "350", "priceCurrency": "EUR"},
+        {"@type": "Offer", "name": "Auditoría de automatización", "price": "180", "priceCurrency": "EUR"},
+        {"@type": "Offer", "name": "Consultoría IA aplicada", "price": "90", "priceCurrency": "EUR"}
+      ]
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "¿Qué es self-hosting y por qué lo necesito?", "acceptedAnswer": {"@type": "Answer", "text": "Self-hosting es alojar tus herramientas en un servidor propio en lugar de pagar suscripciones SaaS. Ejemplos: n8n en vez de Zapier, Nextcloud en vez de Google Drive, Vaultwarden en vez de 1Password. Ventajas: coste fijo mensual del VPS (desde 5€/mes), control total de los datos y sin límites artificiales."}},
+      {"@type": "Question", "name": "¿Qué es n8n y para qué sirve?", "acceptedAnswer": {"@type": "Answer", "text": "n8n es una plataforma de automatización visual que conecta APIs, servicios y modelos de IA. Reemplaza a Zapier o Make pero autoalojada. Ejemplos reales: generar contenido automático desde RSS, sincronizar CRM con email marketing, crear flujos con LLMs (OpenAI, Claude) integrados."}},
+      {"@type": "Question", "name": "¿Incluye el coste del VPS?", "acceptedAnswer": {"@type": "Answer", "text": "No. El coste del VPS (habitualmente 5-20€/mes según proveedor) lo contrata el cliente directamente con el proveedor de su elección. Asesoro en la elección si es necesario."}},
+      {"@type": "Question", "name": "¿Qué dispositivos son compatibles con HomeAssistant?", "acceptedAnswer": {"@type": "Answer", "text": "HomeAssistant integra la mayoría de dispositivos domóticos: Zigbee, Z-Wave, WiFi, Bluetooth. Incluyo coordinador Zigbee de serie en la instalación base. Algunos dispositivos propietarios cerrados pueden no funcionar y se avisan antes."}},
+      {"@type": "Question", "name": "¿Qué pasa con el soporte después del proyecto?", "acceptedAnswer": {"@type": "Answer", "text": "Entregado el proyecto y verificado su funcionamiento, el soporte posterior no está incluido. Disponible mediante plan de mantenimiento mensual o facturación por horas. Esto garantiza que el precio del proyecto es cerrado y justo para ambas partes."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="site-nav" aria-label="Navegación principal">
+    <div class="nav-inner">
+      <a href="/" class="logo"><span class="logo-dot"></span>rubencervera.es</a>
+      <ul class="nav-links">
+        <li><a href="/soporte/">// soporte</a></li>
+        <li><a href="/desarrollo-web/">// web</a></li>
+        <li><a href="/infraestructura-ia/" aria-current="page">// infraestructura</a></li>
+        <li><a href="/blog/">// blog</a></li>
+        <li><a href="/contacto/">// contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <nav class="breadcrumbs" aria-label="Migas de pan">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li aria-current="page">Infraestructura + IA</li>
+      </ol>
+    </nav>
+
+    <section class="hero hero-sm">
+      <div class="hero-meta fade-in">
+        <span class="status-pill">03 · INFRAESTRUCTURA + IA</span>
+      </div>
+      <h1 class="fade-in d1">
+        Self-hosting<br>
+        <span class="slash">//</span> <span class="accent">automatización + IA</span>
+      </h1>
+      <p class="hero-sub fade-in d2">
+        VPS gestionados, stacks Docker, automatizaciones n8n con IA integrada, HomeAssistant y consultoría para aplicar IA a tu negocio. Sale más barato tener un VPS que pagar SaaS — y tienes el control.
+      </p>
+      <div class="hero-actions fade-in d3">
+        <a href="/contacto/?s=infraestructura" class="btn btn-primary">Solicitar presupuesto <span class="arrow">→</span></a>
+      </div>
+    </section>
+
+    <section class="section-sm">
+      <div class="section-label">CATÁLOGO</div>
+      <h2 class="section-title">Servicios de infraestructura e IA.</h2>
+
+      <div class="services-grid">
+
+        <article class="service">
+          <div class="service-header">
+            <h3 class="service-name">Montaje y configuración de VPS</h3>
+            <div class="service-price">250€</div>
+          </div>
+          <div class="service-meta">
+            <span>⏱ 3-5 días</span>
+            <span>◎ Remoto</span>
+            <span>⟳ Docker + SSL</span>
+          </div>
+          <div class="service-spec">
+            <div class="spec-label ok">INCLUYE</div>
+            <ul class="spec-list ok">
+              <li>Linux, Docker, firewall, SSH seguro</li>
+              <li>Certificados SSL y backups automatizados</li>
+              <li>1 aplicación self-hosted a elegir</li>
+              <li>Documentación de acceso</li>
+            </ul>
+          </div>
+          <div class="service-spec">
+            <div class="spec-label no">NO INCLUYE</div>
+            <ul class="spec-list no">
+              <li>Coste del VPS ni dominio</li>
+              <li>Aplicaciones adicionales</li>
+              <li>Soporte posterior (plan aparte)</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="service">
+          <div class="service-header">
+            <h3 class="service-name">Stack self-hosted a medida</h3>
+            <div class="service-price">450€</div>
+          </div>
+          <div class="service-meta">
+            <span>⏱ 1-2 semanas</span>
+            <span>◎ Remoto</span>
+            <span>⟳ 5 servicios Docker</span>
+          </div>
+          <div class="service-spec">
+            <div class="spec-label ok">INCLUYE</div>
+            <ul class="spec-list ok">
+              <li>Hasta 5 servicios en Docker</li>
+              <li>n8n, Nextcloud, Vaultwarden, Grafana, etc.</li>
+              <li>Reverse proxy, dominios, SSL automático</li>
+              <li>Backups configurados</li>
+            </ul>
+          </div>
+          <div class="service-spec">
+            <div class="spec-label no">NO INCLUYE</div>
+            <ul class="spec-list no">
+              <li>Coste del VPS</li>
+              <li>Migración de datos externos</li>
+              <li>Formación del cliente</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="service">
+          <div class="service-header">
+            <h3 class="service-name">Pack n8n · 3 automatizaciones</h3>
+            <div class="service-price">350€</div>
+          </div>
+          <div class="service-meta">
+            <span>⏱ 1-2 semanas</span>
+            <span>◎ Remoto</span>
+            <span>⟳ IA integrable</span>
+          </div>
+          <div class="service-spec">
+            <div class="spec-label ok">INCLUYE</div>
+            <ul class="spec-list ok">
+              <li>3 workflows n8n diseñados y desplegados</li>
+              <li>Pueden incluir nodos de IA (OpenAI, Claude)</li>
+              <li>Pruebas y documentación de uso</li>
+            </ul>
+          </div>
+          <div class="service-spec">
+            <div class="spec-label no">NO INCLUYE</div>
+            <ul class="spec-list no">
+              <li>Coste de APIs externas de pago</li>
+              <li>Modificaciones tras entrega (plan aparte)</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="service">
+          <div class="service-header">
+            <h3 class="service-name">Pack n8n · 7 automatizaciones</h3>
+            <div class="service-price">750€</div>
+          </div>
+          <div class="service-meta">
+            <span>⏱ 3 semanas</span>
+            <span>◎ Remoto</span>
+            <span>⟳ Para pymes</span>
+          </div>
+          <div class="service-spec">
+            <div class="spec-label ok">INCLUYE</div>
+            <ul class="spec-list ok">
+              <li>7 workflows diseñados y desplegados</li>
+              <li>Integración de IA en los flujos</li>
+              <li>Documentación y traspaso</li>
+            </ul>
+          </div>
+          <div class="service-spec">
+            <div class="spec-label no">NO INCLUYE</div>
+            <ul class="spec-list no">
+              <li>Coste de APIs externas</li>
+              <li>Soporte posterior</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="service">
+          <div class="service-header">
+            <h3 class="service-name">Workflow n8n individual</h3>
+            <div class="service-price">desde 140€</div>
+          </div>
+          <div class="service-meta">
+            <span>⏱ 3-7 días</span>
+            <span>◎ Remoto</span>
+            <span>⟳ 3 rondas ajuste</span>
+          </div>
+          <div class="service-spec">
+            <div class="spec-label ok">INCLUYE</div>
+            <ul class="spec-list ok">
+              <li>1 automatización a medida</li>
+              <li>Hasta 3 rondas de ajuste tras entrega</li>
+              <li>Documentación de uso</li>
+            </ul>
+          </div>
+          <div class="service-spec">
+            <div class="spec-label no">NO INCLUYE</div>
+            <ul class="spec-list no">
+              <li>Modificaciones fuera de las rondas</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="service">
+          <div class="service-header">
+            <h3 class="service-name">HomeAssistant · Instalación base</h3>
+            <div class="service-price">350€</div>
+          </div>
+          <div class="service-meta">
+            <span>⏱ 1 día</span>
+            <span>◎ Presencial</span>
+            <span>⟳ Zigbee incluido</span>
+          </div>
+          <div class="service-spec">
+            <div class="spec-label ok">INCLUYE</div>
+            <ul class="spec-list ok">
+              <li>Instalación en dispositivo dedicado</li>
+              <li>Coordinador Zigbee configurado</li>
+              <li>Hasta 10 dispositivos integrados</li>
+              <li>3 automatizaciones iniciales + app móvil</li>
+            </ul>
+          </div>
+          <div class="service-spec">
+            <div class="spec-label no">NO INCLUYE</div>
+            <ul class="spec-list no">
+              <li>Hardware ni dispositivos</li>
+              <li>Obra eléctrica</li>
+              <li>Dispositivos propietarios cerrados</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="service">
+          <div class="service-header">
+            <h3 class="service-name">HomeAssistant · Ampliación</h3>
+            <div class="service-price">45€<small>/hora</small></div>
+          </div>
+          <div class="service-meta">
+            <span>⏱ A demanda</span>
+            <span>◎ Remoto / Presencial</span>
+            <span>⟳ Mínimo 1h</span>
+          </div>
+          <div class="service-spec">
+            <div class="spec-label ok">INCLUYE</div>
+            <ul class="spec-list ok">
+              <li>Configuración de nuevos dispositivos</li>
+              <li>Nuevas automatizaciones</li>
+              <li>Sobre instalación existente</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="service">
+          <div class="service-header">
+            <h3 class="service-name">Auditoría de automatización</h3>
+            <div class="service-price">180€</div>
+          </div>
+          <div class="service-meta">
+            <span>⏱ 7 días</span>
+            <span>◎ Asíncrono</span>
+            <span>⟳ Informe PDF</span>
+          </div>
+          <div class="service-spec">
+            <div class="spec-label ok">INCLUYE</div>
+            <ul class="spec-list ok">
+              <li>Cuestionario y análisis de procesos</li>
+              <li>5-10 oportunidades priorizadas por ROI</li>
+              <li>Herramientas recomendadas y estimación</li>
+            </ul>
+          </div>
+          <div class="service-spec">
+            <div class="spec-label no">NO INCLUYE</div>
+            <ul class="spec-list no">
+              <li>Implementación (presupuesto aparte)</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="service">
+          <div class="service-header">
+            <h3 class="service-name">Consultoría IA aplicada</h3>
+            <div class="service-price">90€<small>/sesión</small></div>
+          </div>
+          <div class="service-meta">
+            <span>⏱ 3-5 días</span>
+            <span>◎ Videollamada</span>
+            <span>⟳ 90 min</span>
+          </div>
+          <div class="service-spec">
+            <div class="spec-label ok">INCLUYE</div>
+            <ul class="spec-list ok">
+              <li>Sesión 90 min de diagnóstico</li>
+              <li>Recomendación de herramientas IA</li>
+              <li>Plan de acción escrito post-sesión</li>
+            </ul>
+          </div>
+          <div class="service-spec">
+            <div class="spec-label no">NO INCLUYE</div>
+            <ul class="spec-list no">
+              <li>Implementación ni licencias</li>
+              <li>Formación extendida</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="rule-box">
+        Entregado el proyecto y verificado su funcionamiento, el soporte posterior no está incluido. Disponible mediante plan de mantenimiento o facturación por horas.
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="faq-title">
+      <div class="section-label">PREGUNTAS FRECUENTES</div>
+      <h2 id="faq-title" class="section-title">FAQ · Infraestructura + IA.</h2>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-q">¿Qué es self-hosting y por qué lo necesito?</summary>
+          <div class="faq-a">Self-hosting es alojar tus herramientas en un servidor propio en lugar de pagar suscripciones SaaS. Ejemplos: n8n en lugar de Zapier, Nextcloud en lugar de Google Drive, Vaultwarden en lugar de 1Password. Ventajas: coste fijo del VPS (desde 5€/mes), control de tus datos y sin límites artificiales de uso.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">¿Qué es n8n y para qué sirve?</summary>
+          <div class="faq-a">n8n es una plataforma de automatización visual que conecta APIs, servicios y modelos de IA. Reemplaza a Zapier o Make pero autoalojada y sin límites de ejecuciones. Ejemplos reales: generar contenido automático desde RSS, sincronizar CRM con email marketing, flujos con LLMs integrados (OpenAI, Claude, etc.).</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">¿Incluye el coste del VPS?</summary>
+          <div class="faq-a">No. El coste del VPS (5-20€/mes típicamente) lo contrata el cliente directamente con el proveedor que prefiera (Hetzner, DigitalOcean, OVH, etc.). Asesoro en la elección sin comisiones ni intermediaciones.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">¿Qué dispositivos son compatibles con HomeAssistant?</summary>
+          <div class="faq-a">HomeAssistant integra la mayoría de dispositivos domóticos del mercado: Zigbee, Z-Wave, WiFi, Bluetooth, Matter. La instalación base incluye coordinador Zigbee. Algunos dispositivos propietarios cerrados pueden no funcionar; se verifica compatibilidad antes de empezar.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">¿Qué pasa con el soporte después del proyecto?</summary>
+          <div class="faq-a">Entregado el proyecto y verificado su funcionamiento, el soporte posterior no está incluido en el precio del proyecto. Se puede contratar aparte mediante plan de mantenimiento mensual o por horas. Esta claridad es lo que permite mantener precios cerrados justos.</div>
+        </details>
+      </div>
+    </section>
+
+    <section class="section-sm">
+      <h2 class="section-title">¿Proyecto técnico en mente?</h2>
+      <p class="section-sub">Cuéntame qué quieres automatizar, autohospedar o integrar con IA.</p>
+      <a href="/contacto/?s=infraestructura" class="btn btn-primary">Solicitar presupuesto <span class="arrow">→</span></a>
+    </section>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand">rubencervera.es</div>
+          <div class="footer-brand-desc">Soluciones técnicas, desarrollo web y automatización con IA. Maresme, Barcelona y remoto.</div>
+        </div>
+        <div class="footer-col">
+          <h4>SERVICIOS</h4>
+          <ul>
+            <li><a href="/soporte/">Soporte y reparación</a></li>
+            <li><a href="/desarrollo-web/">Desarrollo web</a></li>
+            <li><a href="/infraestructura-ia/">Infraestructura + IA</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>SITIO</h4>
+          <ul>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/contacto/">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>CONTACTO</h4>
+          <ul>
+            <li><a href="mailto:info@rubencervera.es">info@rubencervera.es</a></li>
+            <li>Arenys de Mar</li>
+            <li>Barcelona</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Rubén Cervera</div>
+        <div>// powered by rubén cervera</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

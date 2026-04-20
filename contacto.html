@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contacto · Solicitar presupuesto técnico | Rubén Cervera</title>
+  <meta name="description" content="Solicita presupuesto cerrado para soporte técnico, desarrollo web o automatización. Respuesta por email en 48h. Sin llamadas frías ni cotizaciones abiertas.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://rubencervera.es/contacto/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rubencervera.es/contacto/">
+  <meta property="og:title" content="Contacto · Rubén Cervera">
+  <meta property="og:description" content="Solicita presupuesto cerrado. Respuesta en 48h por email.">
+  <meta property="og:locale" content="es_ES">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700;800&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "url": "https://rubencervera.es/contacto/",
+    "mainEntity": {
+      "@type": "ProfessionalService",
+      "name": "Rubén Cervera",
+      "email": "info@rubencervera.es",
+      "telephone": "+34670467504",
+      "address": {"@type": "PostalAddress", "addressLocality": "Arenys de Mar", "addressRegion": "Barcelona", "addressCountry": "ES"}
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://rubencervera.es/"},
+      {"@type": "ListItem", "position": 2, "name": "Contacto", "item": "https://rubencervera.es/contacto/"}
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="site-nav" aria-label="Navegación principal">
+    <div class="nav-inner">
+      <a href="/" class="logo"><span class="logo-dot"></span>rubencervera.es</a>
+      <ul class="nav-links">
+        <li><a href="/soporte/">// soporte</a></li>
+        <li><a href="/desarrollo-web/">// web</a></li>
+        <li><a href="/infraestructura-ia/">// infraestructura</a></li>
+        <li><a href="/blog/">// blog</a></li>
+        <li><a href="/contacto/" aria-current="page">// contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <nav class="breadcrumbs" aria-label="Migas de pan">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li aria-current="page">Contacto</li>
+      </ol>
+    </nav>
+
+    <section class="hero hero-sm">
+      <div class="hero-meta fade-in">
+        <span class="status-pill">PROTOCOLO DE CONTACTO</span>
+      </div>
+      <h1 class="fade-in d1">
+        Solicitud filtrada<br>
+        <span class="slash">//</span> sin <span class="accent">llamadas frías</span>
+      </h1>
+      <p class="hero-sub fade-in d2">
+        Rellena el formulario con todos los datos. Recibirás presupuesto cerrado por email en 48h. Si el proyecto no encaja, también se responde por escrito — sin teléfono, sin perder tiempo.
+      </p>
+    </section>
+
+    <section class="section-sm">
+      <div class="contact-wrap">
+        <form class="form" action="#" method="post" onsubmit="event.preventDefault(); this.querySelector('.form-submit').textContent='// Solicitud enviada (demo)';">
+
+          <div class="form-row">
+            <label class="form-label" for="servicio">SERVICIO SOLICITADO <span class="req">*</span></label>
+            <select id="servicio" name="servicio" class="form-select" required>
+              <option value="">-- Selecciona un servicio --</option>
+              <optgroup label="01 · Soporte y reparación">
+                <option>Diagnóstico y presupuesto</option>
+                <option>Limpieza y mantenimiento físico</option>
+                <option>Instalación de sistema operativo</option>
+                <option>Ampliación RAM / SSD</option>
+                <option>Soporte remoto · Express 30 min</option>
+                <option>Soporte remoto · Estándar 60 min</option>
+                <option>Bono 3 sesiones</option>
+                <option>Plan Mantenimiento Hogar</option>
+                <option>Plan Mantenimiento Profesional</option>
+              </optgroup>
+              <optgroup label="02 · Desarrollo web">
+                <option>Landing / Web personal</option>
+                <option>Web profesional 6 páginas</option>
+                <option>Tienda online WooCommerce</option>
+                <option>Auditoría web existente</option>
+                <option>Rescate / Migración web</option>
+                <option>Mantenimiento web Básico</option>
+                <option>Mantenimiento web Pro</option>
+              </optgroup>
+              <optgroup label="03 · Infraestructura + IA">
+                <option>Montaje VPS</option>
+                <option>Stack self-hosted a medida</option>
+                <option>Pack n8n · 3 automatizaciones</option>
+                <option>Pack n8n · 7 automatizaciones</option>
+                <option>Workflow n8n individual</option>
+                <option>HomeAssistant · Instalación base</option>
+                <option>HomeAssistant · Ampliación</option>
+                <option>Auditoría de automatización</option>
+                <option>Consultoría IA aplicada</option>
+              </optgroup>
+              <option>No lo sé — necesito orientación</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="descripcion">DESCRIPCIÓN DEL CASO <span class="req">*</span></label>
+            <textarea id="descripcion" name="descripcion" class="form-textarea" required placeholder="Qué necesitas exactamente, en 3-5 líneas. Sé concreto — cuanto más claro, más precisa será la respuesta."></textarea>
+          </div>
+
+          <div class="form-row">
+            <label class="form-label">URGENCIA</label>
+            <div class="form-radios">
+              <label><input type="radio" name="urgencia" value="normal" checked><span>NORMAL</span></label>
+              <label><input type="radio" name="urgencia" value="urgente"><span>URGENTE +50%</span></label>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label class="form-label">PRESUPUESTO ACEPTADO</label>
+            <div class="form-radios">
+              <label><input type="radio" name="ppto" value="a" checked><span>&lt; 200€</span></label>
+              <label><input type="radio" name="ppto" value="b"><span>200-500€</span></label>
+              <label><input type="radio" name="ppto" value="c"><span>500-1000€</span></label>
+              <label><input type="radio" name="ppto" value="d"><span>&gt; 1000€</span></label>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="email">EMAIL <span class="req">*</span></label>
+            <input id="email" name="email" class="form-input" type="email" required placeholder="tu@email.com">
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="telefono">TELÉFONO (opcional)</label>
+            <input id="telefono" name="telefono" class="form-input" type="tel" placeholder="Solo se usa si hace falta aclarar algo concreto">
+          </div>
+
+          <div class="form-row">
+            <label style="font-family:var(--mono);font-size:12px;color:var(--text-dim);display:flex;gap:10px;align-items:flex-start;cursor:pointer;">
+              <input type="checkbox" required style="margin-top:4px;">
+              <span>He leído y acepto la <a href="/politica-privacidad/" style="color:var(--accent);">política de privacidad</a>.</span>
+            </label>
+          </div>
+
+          <button type="submit" class="form-submit">ENVIAR SOLICITUD →</button>
+
+        </form>
+      </div>
+    </section>
+
+    <section class="section-sm">
+      <div class="section-label">OTROS CANALES</div>
+      <h2 class="section-title">Contacto directo.</h2>
+      <p class="section-sub">El formulario es el canal preferido. Para clientes con plan activo o casos ya abiertos:</p>
+      <div style="display:flex;gap:30px;flex-wrap:wrap;font-family:var(--mono);font-size:14px;">
+        <div>
+          <div style="color:var(--text-faint);font-size:11px;margin-bottom:6px;">EMAIL</div>
+          <a href="mailto:info@rubencervera.es" style="color:var(--text);text-decoration:none;">info@rubencervera.es</a>
+        </div>
+        <div>
+          <div style="color:var(--text-faint);font-size:11px;margin-bottom:6px;">UBICACIÓN</div>
+          <span>Arenys de Mar · Barcelona</span>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand">rubencervera.es</div>
+          <div class="footer-brand-desc">Soluciones técnicas, desarrollo web y automatización con IA. Maresme, Barcelona y remoto.</div>
+        </div>
+        <div class="footer-col">
+          <h4>SERVICIOS</h4>
+          <ul>
+            <li><a href="/soporte/">Soporte y reparación</a></li>
+            <li><a href="/desarrollo-web/">Desarrollo web</a></li>
+            <li><a href="/infraestructura-ia/">Infraestructura + IA</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>SITIO</h4>
+          <ul>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/contacto/">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>CONTACTO</h4>
+          <ul>
+            <li><a href="mailto:info@rubencervera.es">info@rubencervera.es</a></li>
+            <li>Arenys de Mar</li>
+            <li>Barcelona</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Rubén Cervera</div>
+        <div>// powered by rubén cervera</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Auto-select service from URL param (?s=soporte/web/infraestructura)
+    const params = new URLSearchParams(location.search);
+    const s = params.get('s');
+    if (s) {
+      const map = {soporte: '01 · Soporte y reparación', web: '02 · Desarrollo web', infraestructura: '03 · Infraestructura + IA'};
+      const sel = document.getElementById('servicio');
+      if (sel && map[s]) {
+        const grp = [...sel.querySelectorAll('optgroup')].find(g => g.label === map[s]);
+        if (grp) grp.querySelector('option').selected = true;
+      }
+    }
+  </script>
+
+</body>
+</html>
