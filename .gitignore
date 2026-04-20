@@ -1,3 +1,5 @@
-*.php
+# PHP scripts temporales (setup, fix, utilidades)
+setup.php
+fix_*.php
 *.db
 .DS_Store
